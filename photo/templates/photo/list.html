@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Photo list</title>
-</head>
-<body>
+
+{% extends 'base.html' %}
+{% block title %}-Photo List {% endblock %}
+{% block contents %}
 {% for post in posts%} <!--view.py에서 posts를 던짐-->
-{{ post.text }}        <!--post를 꺼냄-->
+    {{ post.text }}        <!--post를 꺼냄-->
+    {{ post.created}}
+    {{ post.updated }}
+    <img src="{{ post.photo.url }}" width="30">
+    <a href="{% url 'post_detail' post.id %}">Detail</a>
 {% endfor %}           <!--for문 종료-->
-</body>
-</html>
+{% endblock %}

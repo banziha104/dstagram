@@ -19,4 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',include('photo.urls',namespace='photo')),
+    url(r'^account/',include('account.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL,)
