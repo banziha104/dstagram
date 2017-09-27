@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url , include
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$',include('photo.urls',namespace='photo')),
-    url(r'^account/',include('account.urls')),
+    url(r'^$', include('photo.urls', namespace='photo')),
+    url(r'^photo/', include('photo.urls')),
+    url(r'^accounts/', include('accounts.urls')),
 ]
 
-urlpatterns += static(settings.MEDIA_URL,)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

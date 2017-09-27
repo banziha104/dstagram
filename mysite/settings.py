@@ -121,3 +121,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'                          # 웹사이트에서 어디서 보여줄지
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')   # media라는 폴더를 기본으로함
+
+
+LOGIN_REDIRECT_URL = '/' #로그인이라는 것을 어디서 할지

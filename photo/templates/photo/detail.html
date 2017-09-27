@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
-{% block title %}-{{object.text|truncatechars:10}}{% endblock %} <!--10글자로 자름-->
-{% block contents %}
-<img src="{{ object.photo.url }}"><br>
-{{ object.text }}{% endblock %}
+
+{% block title %}
+    {{object.text|truncatechars:10}}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 panel panel-default">
+        <img src="{{object.photo.url}}" class="img-rounded img-responsive"><br>
+        {{object.text}}
+    </div>
+    <div class="col-md-4"></div>
+</div>
+
+
+{% endblock %}
